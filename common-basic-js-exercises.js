@@ -36,3 +36,14 @@ function flattenArray(arr) {
   // By default (1), infinity means all levels
 }
 console.log(flattenArray([1, [2, [3, [4]]]]));
+
+// Array iteration
+const orderBySequence = (arr) => {
+  const counter = {};
+  for(num of arr) {
+    counter[num] = (counter[num] || 0) +1;
+  }
+  return arr.sort((a,b) => counter[b] - counter[a])
+}
+
+console.log(orderBySequence([1,2,2,3,4,4,4,5,6]));
